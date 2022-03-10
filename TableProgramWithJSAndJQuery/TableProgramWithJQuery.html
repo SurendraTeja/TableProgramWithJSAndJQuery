@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+		<table id="table" border="1">
+			<tr>
+				<th>S.No</th>
+					<th>Name
+				</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td id="1">Surendra Teja</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td id="2">Kiran</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td id="3">Vinay Kumar</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td id="4">Subbu</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td id="5">Jathin Kumar Reddy</td>
+			</tr>
+		</table><p></p>
+		Name:<input type="text" id="text" name="name"/><p></p>
+		<button id="button">Submit</button>
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+		var name,id,set;
+				$(document).ready(function()
+				{
+						$(document).on('click','#table tr',function()
+						{
+							name=$(this).find('td:eq(1)').text();
+							id=$(this).find('td:eq(1)').attr('id');
+							$('#text').val(name);
+						});
+						$(document).on('click','#button',function()
+						{
+							set=$('#text').val();
+							$('#'+id).text(set);
+						});
+				});		
+					
+			
+		</script>
+</body>
+</html>
